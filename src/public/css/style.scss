@@ -1,0 +1,58 @@
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Baloo Tamma 2', cursive;
+}
+header {
+  border-bottom: 1px solid #444;
+}
+
+.navigation {
+  a {
+    text-decoration: none;
+    font-size: 30px;
+  }
+}
+
+.blue {
+  color: #1b65ef;
+}
+
+.hero {
+  height: 100vh;
+  background: url('../assets/images/bg.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.caption {
+  background-color: transparent;
+  width: 100%;
+}
+
+.jumbotron {
+    padding: 4rem 2rem;
+  }
+
+.trips {
+  background-color: #fff;
+  width: 90%;
+  max-width: 868px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.flag {
+  width: 75px;
+  height: auto;
+}
+
+@media screen and (min-width: 576px) {
+  .jumbotron {
+    padding: 8rem 2rem;
+  }
+}
+
+
