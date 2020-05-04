@@ -14,7 +14,8 @@ describe('Post Endpoints', () => {
   it('should route to index.html', async () => {
     const res = await request(app)
       .get('/')
-      .send('./dist/index.html')
+      .send('dist/index.html')
+      console.log(res.statusCode);
     expect(res.statusCode).toEqual(200);
   })
 })

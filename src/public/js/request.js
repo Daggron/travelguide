@@ -8,9 +8,11 @@ const darkSkyKey = 'b9ec8785be758ca20484c4940d52e161';
 const pixabayURL = 'https://pixabay.com/api/?key=';
 const pixabayKey = '10294810-dbdbea783e3d3fb62bba039d7';
 
-
+// Handling all the requests in this file
 
 async function getGeoLocation(location) {
+  // Calling the geolocation api to fetch the location and country code of the city
+
   const endpoint = geonamesUrl + geonamesQuery + location + '&username=' + geonamesKey + '&style=full'; 
   try {
     const response = await fetch(endpoint);
@@ -29,6 +31,9 @@ async function getGeoLocation(location) {
 }
 
 async function getWeatherForecast(latitude, longitude) {
+
+  // Getting the weather info from darksky api to get the details of the weather
+  // the latitude and longitude of the city is taken inorder to get the accurated weather
   const endpoint = darkSkyURL + darkSkyKey + `/${latitude}, ${longitude}`;
   try {
     const response = await fetch('http://localhost:8080/forecast',
@@ -47,6 +52,8 @@ async function getWeatherForecast(latitude, longitude) {
 }
 
 async function getImageURL(city, country) {
+
+  //getting the image url from the pixabay of the city and country
   const queryCity = `&q=${city}&image_type=photo&pretty=true&category=places`;
   const queryCountry = `&q=${country}&image_type=photo&pretty=true&category=places`
   

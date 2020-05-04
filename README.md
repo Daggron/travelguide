@@ -16,3 +16,9 @@ Available scripts
 - yarn build-dev
 - yarn test
 - yarn build-prod
+
+Points to standout
+
+A modal is shown to the user when the user searches for the trip and
+options are given to save the trip or cancel the trip if a trip is cancelled
+it do not get stored to the server

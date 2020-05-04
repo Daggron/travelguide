@@ -2,7 +2,7 @@ import { countdown } from './utils';
 import 'bootstrap';
 const $ = require("jquery");
 
-
+//handling ui updates of the dom
 const getTripDate = (date) => {
 
   const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
@@ -46,6 +46,10 @@ const showModal = (trip) => {
     keyboard: false
   })
 
+  // when the user add a trip and to show the information about the trip 
+  // we add a modal which is handled by here provide all the information
+  // about the trip in this modal and show the data
+  // Feeding the info of the data in the modal
   document.querySelector('.trip_title').innerHTML = `<img src="${trip.countryFlag}" class="flag"> ${trip.city}, ${trip.country}`;
   document.querySelectorAll('.media_heading')[0].innerText = `${trip.city}, ${trip.country}`;
  
@@ -62,6 +66,7 @@ const showModal = (trip) => {
   document.querySelector('.trip_countdown').innerHTML = `Your trip to <span class="blue">${trip.city}</span> is <span class="blue"> ${daysLeft}</span> days away`;
 
   const weather = getWeatherInfo(trip.weatherForecast, tripStart);
+
   if (daysLeft < 7) {
     document.querySelector('.trip_weather').innerHTML = `<p class="mt-1">The current weather:</p>
                                                        <p class="mt-1 blue">${weather.temperature}&deg;F</p>
@@ -75,6 +80,11 @@ const showModal = (trip) => {
 }
 
 const displayTrip = (trip) => {
+
+  // When the user save a trip a seperate list of div is maintained and
+  // showed to the user which is handled here
+  // the modal which is shown here is closed 
+  // and the similar div is rendered to the ui
   document.querySelector('.caption').style.display = 'block';
   document.querySelector('.caption').style.top = '5vh';
   

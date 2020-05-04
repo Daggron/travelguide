@@ -12,14 +12,13 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(bodyParser.json());
 
-app.use(express.static(path.join(__dirname,'dist')));
+app.use(express.static('dist'));
 
 
 const trips = [];
 
-
 app.get('/', (req, res) => {
-  res.status(200).send('./dist/index.html');
+  res.status(200).sendFile('dist/index.html');
 });
 
 app.post('/save', (req, res) => {
@@ -46,7 +45,6 @@ app.post('/forecast', async (req, res) => {
   } catch (error) {
     console.log(error);
   }
-
 });
 
 const PORT = 8080;
@@ -54,3 +52,6 @@ const PORT = 8080;
 app.listen(PORT, () => {
   console.log(`Firing on port ${PORT}`);
 });
+
+// Please Uncomment the line below to run the tests
+// export {app};
