@@ -54,4 +54,4 @@ app.listen(PORT, () => {
 });
 
 // Please Uncomment the line below to run the tests
-// export {app};
+export {app};
